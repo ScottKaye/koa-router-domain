@@ -23,12 +23,12 @@ Koa.use(new Domain([":type", ":version", "api"], APIRouter));
 // Or string syntax, which is internally split into parts
 Koa.use(new Domain(":sub.random", SomeRouter));
 
-MainRouter.get("/:main", async (ctx, next) => {
+MainRouter.get("/", async (ctx, next) => {
 	ctx.body = "This is the main site.";
 	await next();
 });
 
-APIRouter.get("/:api", async (ctx, next) => {
+APIRouter.get("/", async (ctx, next) => {
 	ctx.body = {
 		message: "Welcome to the API!",
 		type: APIRouter.vars.type,
@@ -37,7 +37,7 @@ APIRouter.get("/:api", async (ctx, next) => {
 	await next();
 });
 
-SomeRouter.get("/:somerouter", async (ctx, next) => {
+SomeRouter.get("/", async (ctx, next) => {
 	ctx.body = `This is SomeRouter, on "${ SomeRouter.vars.sub }".`;
 	await next();
 });
