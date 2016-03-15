@@ -1,0 +1,32 @@
+{
+  "name": "koa-router-domain",
+  "version": "1.0.0",
+  "description": "Adds easy support for domains and subdomains to koa-router.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScottKaye/koa-router-domain.git"
+  },
+  "main": "lib/koa-router-domain.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "koa",
+    "router",
+    "route",
+    "subdomain",
+    "domain"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Kaye <github@scottkaye.net>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "next",
+    "koa-router": "next"
+  },
+  "engine": {
+    "node": ">= v6.0.0"
+  }
+}
