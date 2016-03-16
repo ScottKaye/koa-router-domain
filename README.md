@@ -1,9 +1,13 @@
 # koa-router-domain
-> Middleware to help route domains and subdomains to individual `koa-router`s.
+
+## Installation
+```
+$ npm install koa-router-domain
+```
 
 koa-router-domain currently supports `koa@next` and `koa-router@next` (for `async` style).  Previous versions will not work!
 
-# Usage
+## Usage
 A full, complete example can be found in [example.js](example.js), but here's the basic idea:
 
 ```js
@@ -30,7 +34,7 @@ new Domain([":version", "api"], router);
 
 Because of the possibility of collisions (multiple routes matching the same request), koa-router-domain will do it's best to check if a similar route has been registered already when the server is started.  If a domain expression somehow matches multiple routes, the first one will be called.  **koa-router-domain does not `next()` through each match.**
 
-# Domain Expressions
+## Domain Expressions
 koa-router-domain supports variables in subdomains.  Variables start with `:`, and can contain anything, up to a period `.` to delimit subdomains.  Matched variables are exposed to router handlers through the use of `Router.vars` - [example.js](example.js) should make this very clear.
 
 - Variables are not optional if they are specified in the domain expression
